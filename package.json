@@ -1,0 +1,22 @@
+{
+  "name": "f2021-assign3",
+  "version": "1.0.0",
+  "description": "**Please view `COMP3612 Assignment 3.pdf` for instructions**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mru-comp3612-archive/f2021-assign3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mru-comp3612-archive/f2021-assign3/issues"
+  },
+  "homepage": "https://github.com/mru-comp3612-archive/f2021-assign3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
