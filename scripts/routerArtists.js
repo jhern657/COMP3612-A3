@@ -10,7 +10,7 @@ const handleAllArtist = app =>
 const handleByArtistCountry = app => 
 {
     app.get('/artists/:country', (req, resp) => {
-        const countryMatch  = artist.filter(a => a.Nationality.toLowerCase() == req.params.country);
+        const countryMatch  = artist.filter(a => a.Nationality.toLowerCase() == req.params.country.toLowerCase());
         if (countryMatch.length > 0)
         {
             resp.json(countryMatch);

@@ -13,7 +13,7 @@ const handleByPaintingsID = app => {
             resp.json(idMatch);
         }
         else {
-            resp.json({ "message": "no paintings for provided id" });
+            resp.json({ "message": "no paintings for provided painting id" });
         }
 
     });
@@ -27,7 +27,7 @@ const handleByPaintingMinMax = app => {
             resp.json(yearMatch);
         }
         else {
-            resp.json({ "message": "no painting for provided these years" });
+            resp.json({ "message": "no painting provided for these years" });
         }
     });
 };
@@ -39,7 +39,7 @@ const handleByPaintingArtistID = app => {
             resp.json(artistIDMatch);
         }
         else {
-            resp.json({ "message": "no painting for provided artist ID" });
+            resp.json({ "message": "no painting provided for artist ID" });
         }
     });
 };
@@ -51,7 +51,7 @@ const handleByPaintingsGalleryID = app => {
             resp.json(galleryIDMatch);
         }
         else {
-            resp.json({ "message": "no paintings for provided gallery ID" });
+            resp.json({ "message": "no paintings provided for gallery ID" });
         }
 
     });
@@ -59,12 +59,12 @@ const handleByPaintingsGalleryID = app => {
 
 const handleByPaintingTitle = app => {
     app.get('/painting/title/:text', (req, resp) => {
-        const titleMatch = paintings.find(p => p.title.toLowerCase().includes(req.params.text));
+        const titleMatch = paintings.find(p => p.title.toLowerCase().includes(req.params.text.toLowerCase()));
         if (titleMatch) {
             resp.json(titleMatch);
         }
         else {
-            resp.json({ "message": "no painting for provided title" });
+            resp.json({ "message": "no painting provided for title" });
         }
     });
 };
@@ -73,12 +73,12 @@ const handleByPaintingsColour = app => {
     app.get('/painting/color/:name', (req, resp) => {
         const colorMatch = paintings.filter( p => {  
             for (let c of p.details.annotation.dominantColors){
-                const match = c.name.toLowerCase().includes(req.params.name);
+                const match = c.name.toLowerCase().includes(req.params.name.toLowerCase());
                 if(match > 0){
                     resp.json(colorMatch);
                 }
                 else {
-                    resp.json({ "message": "no painting for provided color" });
+                    resp.json({ "message": "no painting provided for color" });
                 }
             }
         });

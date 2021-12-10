@@ -10,7 +10,7 @@ const handleAllGalleries = app =>
 const handleByGalleriesCountry = app => 
 {
     app.get('/galleries/:country', (req, resp) =>{
-        const countryMatch  = galleries.filter( g => g.GalleryCountry.toLowerCase() == req.params.country);
+        const countryMatch  = galleries.filter( g => g.GalleryCountry.toLowerCase() == req.params.country.toLowerCase());
         if (countryMatch.length > 0)
         {
             resp.json(countryMatch);
